@@ -3,12 +3,13 @@
 import { useState } from "react"
 import { WelcomeScreen } from "@/components/screens/welcome-screen"
 import { SearchScreen } from "@/components/screens/search-screen"
+import { AnalyzingScreen } from "@/components/screens/analyzing-screen"
 import { RecommendationsScreen } from "@/components/screens/recommendations-screen"
 import { PriceInsightScreen } from "@/components/screens/price-insight-screen"
 import { BookingScreen } from "@/components/screens/booking-screen"
 import { ConfirmationScreen } from "@/components/screens/confirmation-screen"
 
-type Screen = "welcome" | "search" | "recommendations" | "price-insight" | "booking" | "confirmation"
+type Screen = "welcome" | "search" | "analyzing" | "recommendations" | "price-insight" | "booking" | "confirmation"
 
 export default function TravelAssistant() {
   const [currentScreen, setCurrentScreen] = useState<Screen>("welcome")
@@ -21,6 +22,10 @@ export default function TravelAssistant() {
   }
 
   const handleSearch = () => {
+    setCurrentScreen("analyzing")
+  }
+
+  const handleAnalysisComplete = () => {
     setCurrentScreen("recommendations")
   }
 
@@ -55,6 +60,9 @@ export default function TravelAssistant() {
           preference={preference}
         />
       )
+    
+    case "analyzing":
+      return <AnalyzingScreen onComplete={handleAnalysisComplete} />
     
     case "recommendations":
       return (

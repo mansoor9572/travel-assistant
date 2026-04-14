@@ -13,7 +13,7 @@ export function RecommendationsScreen({ onViewDetails, onBack, preference }: Rec
   const getRecommendedFlight = () => {
     switch (preference) {
       case "lowest":
-        return { time: "08:00 AM", arrival: "03:30 PM", duration: "7h 30m", price: 420, label: "Lowest price available", airline: "AirAsia" }
+        return { time: "02:00 PM", arrival: "10:15 PM", duration: "8h 15m", price: 395, label: "Lowest price available", airline: "Qatar Airways" }
       case "fastest":
         return { time: "10:00 AM", arrival: "04:15 PM", duration: "6h 15m", price: 520, label: "Fastest direct route", airline: "Emirates" }
       default:
@@ -134,7 +134,7 @@ export function RecommendationsScreen({ onViewDetails, onBack, preference }: Rec
           <div className="flex items-center justify-center gap-2">
             <div className="h-px flex-1 bg-border" />
             <p className="text-xs text-muted-foreground px-3">
-              Best option highlighted to reduce decision fatigue
+              Highlighted to reduce decision fatigue
             </p>
             <div className="h-px flex-1 bg-border" />
           </div>

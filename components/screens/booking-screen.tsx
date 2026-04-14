@@ -15,7 +15,7 @@ export function BookingScreen({ onConfirm, onBack, preference }: BookingScreenPr
   const getPrice = () => {
     switch (preference) {
       case "lowest":
-        return 420
+        return 395
       case "fastest":
         return 520
       default:
@@ -26,7 +26,7 @@ export function BookingScreen({ onConfirm, onBack, preference }: BookingScreenPr
   const getFlightDetails = () => {
     switch (preference) {
       case "lowest":
-        return { time: "08:00 AM", arrival: "03:30 PM", duration: "7h 30m", airline: "AirAsia" }
+        return { time: "02:00 PM", arrival: "10:15 PM", duration: "8h 15m", airline: "Qatar Airways" }
       case "fastest":
         return { time: "10:00 AM", arrival: "04:15 PM", duration: "6h 15m", airline: "Emirates" }
       default:
